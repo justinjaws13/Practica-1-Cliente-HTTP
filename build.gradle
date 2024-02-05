@@ -1,9 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+mainClassName = 'org.example.Main'
 
 repositories {
     mavenCentral()
@@ -17,8 +19,14 @@ dependencies {
 
     implementation 'org.jsoup:jsoup:1.17.2' // se importó este jsoup para poder trabajar mas sencillo a la hora de recorrer un DOM HTML, extraer datos etc
 
+
+
 }
 
 test {
     useJUnitPlatform()
+}
+
+run{
+    standardInput = System.in
 }
